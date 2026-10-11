@@ -46,14 +46,14 @@ cp .env.example .env
 Configure `.env` with your MongoDB connection details:
 
 ```env
-MONGO\_URI=mongodb://localhost:27017
-MONGO\_DB=hrone\_attendance
+MONGO_URI=mongodb://localhost:27017
+MONGO_DB=attendance_db
 ```
 
 Ensure MongoDB is running, then load the sample data:
 
 ```bash
-python sample\_seed.py
+python sample_seed.py
 ```
 
 Start the API:
@@ -80,8 +80,8 @@ Once the server is running, open:
 |POST|`/attendance/punch-in`|Record attendance punch-in|
 |POST|`/attendance/punch-out`|Record attendance punch-out|
 |GET|`/attendance`|Filter and paginate attendance records|
-|PATCH|`/attendance/{emp\_code}/{date}`|Regularize an attendance record|
-|GET|`/analytics/employees/{emp\_code}/monthly`|Monthly employee analytics|
+|PATCH|`/attendance/{emp_code}/{date}`|Regularize an attendance record|
+|GET|`/analytics/employees/{emp_code}/monthly`|Monthly employee analytics|
 |GET|`/analytics/departments/summary`|Department attendance summary|
 |GET|`/analytics/leaderboard/late`|Rank employees by late minutes|
 |GET|`/analytics/departments/{department}/trend`|Department attendance trends|
@@ -96,19 +96,19 @@ Refer to `openapi.yaml` for the API contract, parameters, response schemas, and 
 
 |-- app/
 
-|   |-- \_\_init\_\_.py
+|   |-- __init__.py
 
 |   `-- main.py
 
-|-- sample\_data/
+|-- sample_data/
 
-|   |-- attendance\_logs.json
+|   |-- attendance_logs.json
 
 |   `-- employees.json
 
 |-- .env.example
 
-|-- DATA\_MODEL.md
+|-- DATA_MODEL.md
 
 |-- DECISIONS.md
 
@@ -118,7 +118,7 @@ Refer to `openapi.yaml` for the API contract, parameters, response schemas, and 
 
 |-- requirements.txt
 
-`-- sample\_seed.py
+`-- sample_seed.py
 
 ```
 
